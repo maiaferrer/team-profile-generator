@@ -9,12 +9,12 @@ const generateTeamSite = (team) => {
         let managerHtml = `
         <div class="card" style="width: 18rem;">
             <div class="card-header">
-           ${managerAnswers.managername} <br/>
+           ${manager.managername} <br/>
            <i class="fas fa-mug-hot"></i>Manager</div>
            <ul class="list-group list-group-flush">
-            <li class="list-group-item">ID: ${managerAnswers.managerid}</li>
-            <li class="list-group-item">Email: <span id="email"><a href="mailto:${managerAnswers.manageremail}">${managerAnswers.manageremail}</a></span></li>
-            <li class="list-group-item">Office Number: ${managerAnswers.managerofficeNumber}</li>
+            <li class="list-group-item">ID: ${manager.managerid}</li>
+            <li class="list-group-item">Email: <span id="email"><a href="mailto:${manager.manageremail}">${managerAnswers.manageremail}</a></span></li>
+            <li class="list-group-item">Office Number: ${manager.managerofficeNumber}</li>
             </ul>
         </div>
         `;
@@ -27,12 +27,12 @@ const generateTeamSite = (team) => {
         `
          <div class="card" style="width: 18rem;">
             <div class="card-header">
-           ${engineerAnswers.engineername} <br/>
+           ${engineer.engineername} <br/>
            <i class="fas fa-glasses"></i>Engineer</div>
            <ul class="list-group list-group-flush">
-            <li class="list-group-item">ID: ${engineerAnswers.engineerid}</li>
-            <li class="list-group-item">Email: <span id="email"><a href="mailto:${engineerAnswers.engineeremail}">${engineerAnswers.engineeremail}</a></span></li>
-            <li class="list-group-item">Github Username: <a target="_blank" href="https://github.com/${engineerAnswers.Engineergithub}">${engineerAnswers.engineergithub}</a></li>
+            <li class="list-group-item">ID: ${engineer.engineerid}</li>
+            <li class="list-group-item">Email: <span id="email"><a href="mailto:${engineer.engineeremail}">${engineer.engineeremail}</a></span></li>
+            <li class="list-group-item">Github Username: <a target="_blank" href="https://github.com/${engineer.Engineergithub}">${engineer.engineergithub}</a></li>
             </ul>
         </div>
         `;
@@ -45,12 +45,12 @@ const generateTeamSite = (team) => {
         `
          <div class="card" style="width: 18rem;">
             <div class="card-header">
-           ${internAnswers.internname} <br/>
+           ${intern.internname} <br/>
            <i class="fas fa-user-graduate"></i>Intern</div>
            <ul class="list-group list-group-flush">
-            <li class="list-group-item">ID: ${internAnswers.internid}</li>
-            <li class="list-group-item">Email: <span id="email"><a href="mailto:${internAnswers.internemail}">${internAnswers.internemail}</a></span></li>
-            <li class="list-group-item">School: ${internAnswers.internschool}</li>
+            <li class="list-group-item">ID: ${intern.internid}</li>
+            <li class="list-group-item">Email: <span id="email"><a href="mailto:${intern.internemail}">${internAnswers.internemail}</a></span></li>
+            <li class="list-group-item">School: ${intern.internschool}</li>
             </ul>
         </div>
         `;
@@ -68,16 +68,13 @@ for (let i = 0; i < generateTeamSite.length; i++) {
     if (team[i].getRole() === "Intern") {
         createInternCard(team[i]);
     }
-}
-
 // join html blocks for manager, engineer, and intern employees // 
-return userHtml.join('');
+    return userHtml.join('');
+}
 
 // function team to generate html
 module.exports = team => {
-    return 
-    console.log('hello world');
-    `
+    return `
      <!DOCTYPE html>
 <html lang="en">
 <head>

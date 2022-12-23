@@ -1,5 +1,5 @@
 // Generate team site function
-function generateTeamSite() {
+const generateTeamSite = (team) => {
 // 1 - creates an array to push onto html
     const userHtml = [];
 // 2 - function for each employee that is renderd
@@ -58,10 +58,47 @@ function generateTeamSite() {
     }
 
 // for loop for inputed employees
+for (let i = 0; i < generateTeamSite.length; i++) {
+    if (team[i].getRole() === "Manager") {
+        createManagerCard(team[i]);
+    }
+    if (team[i].getRole() === "Engineer") {
+        createEngineerCard(team[i]);
+    }
+    if (team[i].getRole() === "Intern") {
+        createInternCard(team[i]);
+    }
+}
 
+// join html blocks for manager, engineer, and intern employees // 
+return userHtml.join('');
 
-// join html blocks
-
-
-// function generate html
+// function team to generate html
+module.exports = team => {
+    return 
+    console.log('hello world');
+    `
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/1e0a13a89f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../dist/style.css" />
+    <title>Team Profile Generator</title>
+</head>
+<body>
+    <header>
+    <h1> My Team </h1>
+    </header>
+    <main> ${generateTeamSite(team)} </main>
+     
+</body>
+<footer> created by Maia Ferrer </footer>
+</html>
+   `
+    }
 }

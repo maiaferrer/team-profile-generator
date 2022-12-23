@@ -13,7 +13,7 @@ const generateTeamSite = (team) => {
            <i class="fas fa-mug-hot"></i>Manager</div>
            <ul class="list-group list-group-flush">
             <li class="list-group-item">ID: ${manager.managerid}</li>
-            <li class="list-group-item">Email: <span id="email"><a href="mailto:${manager.manageremail}">${managerAnswers.manageremail}</a></span></li>
+            <li class="list-group-item">Email: <span id="email"><a href="mailto:${manager.manageremail}">${manager.manageremail}</a></span></li>
             <li class="list-group-item">Office Number: ${manager.managerofficeNumber}</li>
             </ul>
         </div>
@@ -23,8 +23,7 @@ const generateTeamSite = (team) => {
 
 // generates ENGINEER HTML
     const createEngineerCard = engineer => {
-        let engineerHtml = 
-        `
+        let engineerHtml = `
          <div class="card" style="width: 18rem;">
             <div class="card-header">
            ${engineer.engineername} <br/>
@@ -41,8 +40,7 @@ const generateTeamSite = (team) => {
 
 // generates INTERN HTML
     const createInternCard = intern => {
-        let internHtml = 
-        `
+        let internHtml = `
          <div class="card" style="width: 18rem;">
             <div class="card-header">
            ${intern.internname} <br/>
@@ -58,7 +56,7 @@ const generateTeamSite = (team) => {
     }
 
 // for loop for inputed employees
-for (let i = 0; i < generateTeamSite.length; i++) {
+for (let i = 0; i < team.length; i++) {
     if (team[i].getRole() === "Manager") {
         createManagerCard(team[i]);
     }
@@ -73,7 +71,7 @@ for (let i = 0; i < generateTeamSite.length; i++) {
 }
 
 // function team to generate html
-module.exports = team => {
+module.exports = (team) => {
     return `
      <!DOCTYPE html>
 <html lang="en">
@@ -96,6 +94,7 @@ module.exports = team => {
 </body>
 <footer> created by Maia Ferrer </footer>
 </html>
-   `
-    }
+   `;
 }
+}
+module.exports = generateTeamSite;

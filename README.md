@@ -1,6 +1,5 @@
 # Team Profile Generator
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
-[![Npm package version](https://badgen.net/npm/v/express)](https://npmjs.com/package/express)
 
 ![screenshot of team generator](./assets/images/app-screenshot.jpeg)
 
@@ -13,7 +12,7 @@ Furthermore, tests were curated for each employee title using Jest.
 
 Give it a try!
 
-Watch a User Demo [HERE](https://youtu.be/fJqJokMeIug)
+Watch a User Demo [HERE](https://youtu.be/CHCe77cbL7Y)
 
 ## Usage information
 1. User must first install the `inquierer` using the following command in the integrated terminal: 
@@ -59,7 +58,7 @@ THEN I exit the application, and the HTML is generated
 ## Important Links
 
 - [GitHub Repository](https://github.com/maiaferrer/team-profile-generator)
-- [Demo](https://youtu.be/fJqJokMeIug)
+- [Demo](https://youtu.be/CHCe77cbL7Y)
 
 ## Technology used
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)

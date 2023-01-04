@@ -124,12 +124,12 @@ function addIntern()
         type:'input',
         message: 'What is the Interns School?',
         name:'internschool',
-    }.then((internAnswers) => {
+    }
+  ]).then((internAnswers) => {
       const intern = new Intern (internAnswers.internname, internAnswers.internid, internAnswers.internemail, internAnswers.internschool)
         team.push(intern);
         addEmployee();
     })
-  ])
 };
 console.log(team);
 
@@ -140,6 +140,7 @@ function userTeam()
       fs.mkdirSync(OUTPUT_DIR);
     }
     fs.writeFileSync(outputPath,generateTeamSite(team), 'utf-8');
+    console.log('The team generator file has been successfully completed!')
 }
 
 managerPrompts();

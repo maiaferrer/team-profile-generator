@@ -7,14 +7,14 @@ const generateTeamSite = (team) => {
 // generates MANAGER HTML
     const createManagerCard = manager => {
         let managerHtml = `
-        <div class="card" style="width: 18rem;">
+        <div class="card shadow-lg mb-5 bg-white rounded" style="width: 20rem;">
             <div class="card-header">
-           ${manager.managername} <br/>
-           <i class="fas fa-mug-hot"></i>Manager</div>
+           ${manager.name} <br/>
+           <i class="fas fa-mug-hot"></i> Manager</div>
            <ul class="list-group list-group-flush">
-            <li class="list-group-item">ID: ${manager.managerid}</li>
-            <li class="list-group-item">Email: <span id="email"><a href="mailto:${manager.manageremail}">${manager.manageremail}</a></span></li>
-            <li class="list-group-item">Office Number: ${manager.managerofficeNumber}</li>
+            <li class="list-group-item">ID: ${manager.id}</li>
+            <li class="list-group-item">Email: <span id="email"><a href="mailto:${manager.email}">${manager.email}</a></span></li>
+            <li class="list-group-item">Office Number: ${manager.officeNumber}</li>
             </ul>
         </div>
         `;
@@ -24,31 +24,32 @@ const generateTeamSite = (team) => {
 // generates ENGINEER HTML
     const createEngineerCard = engineer => {
         let engineerHtml = `
-         <div class="card" style="width: 18rem;">
+         <div class="card shadow-lg mb-5 bg-white rounded" style="width: 20rem;">
             <div class="card-header">
-           ${engineer.engineername} <br/>
-           <i class="fas fa-glasses"></i>Engineer</div>
+           ${engineer.name} <br/>
+           <i class="fas fa-glasses"></i> Engineer</div>
            <ul class="list-group list-group-flush">
-            <li class="list-group-item">ID: ${engineer.engineerid}</li>
-            <li class="list-group-item">Email: <span id="email"><a href="mailto:${engineer.engineeremail}">${engineer.engineeremail}</a></span></li>
-            <li class="list-group-item">Github Username: <a target="_blank" href="https://github.com/${engineer.Engineergithub}">${engineer.engineergithub}</a></li>
+            <li class="list-group-item">ID: ${engineer.id}</li>
+            <li class="list-group-item">Email: <span id="email"><a href="mailto:${engineer.email}">${engineer.email}</a></span></li>
+            <li class="list-group-item">Github: <a target="_blank" href="https://github.com/${engineer.github}">${engineer.github}</a></li>
             </ul>
         </div>
         `;
         userHtml.push(engineerHtml);
     }
 
+
 // generates INTERN HTML
     const createInternCard = intern => {
         let internHtml = `
-         <div class="card" style="width: 18rem;">
+         <div class="card shadow-lg mb-5 bg-white rounded " style="width: 20rem;">
             <div class="card-header">
-           ${intern.internname} <br/>
-           <i class="fas fa-user-graduate"></i>Intern</div>
+           ${intern.name} <br/>
+           <i class="fas fa-user-graduate"></i> Intern</div>
            <ul class="list-group list-group-flush">
-            <li class="list-group-item">ID: ${intern.internid}</li>
-            <li class="list-group-item">Email: <span id="email"><a href="mailto:${intern.internemail}">${internAnswers.internemail}</a></span></li>
-            <li class="list-group-item">School: ${intern.internschool}</li>
+            <li class="list-group-item">ID: ${intern.id}</li>
+            <li class="list-group-item">Email: <span id="email"><a href="mailto:${intern.email}">${intern.email}</a></span></li>
+            <li class="list-group-item">School: ${intern.schoolName}</li>
             </ul>
         </div>
         `;
@@ -67,9 +68,9 @@ for (let i = 0; i < team.length; i++) {
         createInternCard(team[i]);
     }
 // join html blocks for manager, engineer, and intern employees // 
+}
     return userHtml.join('');
 }
-
 // function team to generate html
 module.exports = (team) => {
     return `
@@ -82,19 +83,21 @@ module.exports = (team) => {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/1e0a13a89f.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="../dist/team-logo.png">
     <link rel="stylesheet" href="../dist/style.css" />
     <title>Team Profile Generator</title>
 </head>
 <body>
     <header>
-    <h1> My Team </h1>
+    <h1> MY TEAM </h1>
+     <img src="../dist/team-logo.png" alt="logo" class="center-img">
     </header>
     <main> ${generateTeamSite(team)} </main>
      
 </body>
-<footer> created by Maia Ferrer </footer>
+<footer> CREATED BY MAIA FERRER </footer>
 </html>
-   `;
+   `
 }
-}
-module.exports = generateTeamSite;
+
+
